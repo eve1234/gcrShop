@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="-1" guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ToolsQA.gcrShopAdmin.Admin">
+      <class name="com.gcrShopAdmin.qa.testcases.AdminHomeTest">
         <methods>
-          <include name="launhApplication"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="categoriesOrProductsLinkTest"/>
         </methods>
-      </class> <!-- ToolsQA.gcrShopAdmin.Admin -->
+      </class> <!-- com.gcrShopAdmin.qa.testcases.AdminHomeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

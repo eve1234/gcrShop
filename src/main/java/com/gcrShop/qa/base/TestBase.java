@@ -33,7 +33,7 @@ public class TestBase {
 		        
 		        try{
 		            prop=new Properties();
-		            FileInputStream f= new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/evevoni"
+		            FileInputStream f= new FileInputStream(System.getProperty("user.dir")+"/src/main/java/com/gcrShop"
 		                    + "/qa/config/config.properties");
 		            prop.load(f);
 		            
@@ -47,7 +47,9 @@ public class TestBase {
 		        }
 		    }
 		
-		public static void initialization(){
+		
+		//Tell the initialization which url to call.
+		public static void initialization(String weburl){
 	        
 	        String browserName= prop.getProperty("browser");
 	        //the browser drivers were installed using brew
@@ -75,7 +77,13 @@ public class TestBase {
 	       driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 	       driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 	    
+	       //call the appropriate url to test
+	       if(weburl=="url") {
 	       driver.get(prop.getProperty("url"));
+	       }
+	       else {
+	    	   driver.get(prop.getProperty("url2"));
+	       }
 	               
 	       }
 		

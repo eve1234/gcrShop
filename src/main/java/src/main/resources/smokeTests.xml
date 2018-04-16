@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="GCRShop test Suite" parallel="false">
+  <test name="Test">
+    <classes>
+      <class name="com.gcrShopAdmin.qa.testcases.AdminHomeTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
