@@ -12,6 +12,15 @@ import com.gcrShop.qa.base.TestBase;
 
 public class AdminHomePage extends TestBase{
 	
+	@FindBy(name="username")
+	WebElement usernameLogin;
+	
+	@FindBy(name="password")
+	WebElement passwordLogin;
+	
+	@FindBy(id="tdb1")
+	WebElement tdb1LoginBtn;
+	
 	@FindBy(linkText="Online Catalog")
 	WebElement onlineCatalogLink;
 	
@@ -92,7 +101,7 @@ public class AdminHomePage extends TestBase{
 			
 		}
 	
-	/*public AdminHomePage manufacturersLink() {
+	public AdminHomePage manufacturersLink() {
 		
 		manufacturersLink.click();
 		return new AdminHomePage();
@@ -176,6 +185,16 @@ public class AdminHomePage extends TestBase{
 		return new AdminHomePage();
 					
 	}
-		*/
+		
+	
+	public AdminHomePage login(String uName, String pwd) {
+		
+		usernameLogin.sendKeys(uName);
+		passwordLogin.sendKeys(pwd);
+		tdb1LoginBtn.click();
+		
+		return new AdminHomePage();
+		
+	}
 	
 }
